@@ -2,6 +2,7 @@
 
 > 기본 스킬(ppt-master, frontend-design 등) 위에 **팀 표준을 덮어씌운 오버레이 스킬** 모음
 > 스킬 이름만 부르면 표준대로 결과가 나오게 하는 것이 목표
+> **Claude 전용** — claude.ai와 Claude Code에서 같은 스킬 사용 ([Claude Code 가이드](guides/claude-code.md))
 
 ## 치트시트
 
@@ -23,6 +24,7 @@
 - 웹 디자인 표준은 용도별로 분리: `DASHBOARD-DESIGN.md`(관리자·업무 시스템 대시보드) / `FRONT-DESIGN.md`(서비스 프론트, 예정)
 - **구조**(`DASHBOARD-DESIGN.md`)와 **색상**(`themes/*.md`) 분리 → 같은 토큰 이름에 값만 교체, 화면 코드는 그대로
 - 요청에서 테마 이름을 부르거나(`slate 테마로`), 분위기를 설명하면(`딥 블루 다크 톤`) 맞는 테마 적용, 없으면 새 테마 파일을 계약대로 만들어 함께 제출
+- 외부 부품은 어댑터로 연결: [shadcn/ui](shared/web/adapters/shadcn.md) (React·Next.js, 대응표로 테마 그대로 적용) · [TailAdmin](shared/web/adapters/tailadmin.md) (MIT, 차트·달력 등 부품만 가져와 토큰으로 치환)
 - 새 테마 추가: `shared/web/themes/{이름}.md` 작성 ([THEME-CONTRACT.md](shared/web/THEME-CONTRACT.md) 6장 형식, 대비 측정표 포함) → `python3 scripts/theme-to-css.py shared/web/themes/{이름}.md`로 검증 → 빌드
 
 | 테마 | 모드 | 분위기 |
@@ -75,7 +77,8 @@ skills-cheatsheet/
 │   └── web/
 │       ├── DASHBOARD-DESIGN.md  # 대시보드(관리자·업무 시스템) 구조: 레이아웃·컴포넌트·패턴·문구
 │       ├── THEME-CONTRACT.md    # 테마 규칙: 필수 토큰, 대비 기준, 라이트/다크 구현
-│       └── themes/              # 테마 = 색상 토큰만 (admin-navy 기본, slate 딥 블루 다크)
+│       ├── themes/              # 테마 = 색상 토큰만 (admin-navy 기본, slate 딥 블루 다크)
+│       └── adapters/            # 외부 부품 연결: shadcn.md, tailadmin.md
 ├── skills/                      # 오버레이 스킬 (폴더명 = 스킬명)
 │   ├── ppt-proposal/
 │   │   ├── SKILL.md             # 호출 조건(description) + 실행 절차
@@ -86,15 +89,19 @@ skills-cheatsheet/
 │   └── web-admin/            # profile 없음 (디자인 시스템이 곧 표준)
 ├── guides/                      # 엔진 스킬 사용 가이드 (사람이 읽는 문서)
 │   ├── no-install.md            # 설치 없이 파일 첨부로 쓰는 방법
+│   ├── claude-code.md           # Claude Code에 설치·사용
 │   ├── ppt-master.md
 │   └── ppt-master-prompts.md
 ├── examples/web/                # 테마 적용 예시 화면 (가상 데이터)
 ├── _template/overlay-skill/     # 새 오버레이 스킬 양식
 ├── scripts/build.sh             # skills/* → dist/*.zip (claude.ai 업로드용)
-└── scripts/theme-to-css.py      # 테마 파일 → CSS 변수 (Tailwind v4 / 순수 CSS)
+├── scripts/install-claude-code.sh  # 스킬을 ~/.claude/skills 또는 프로젝트 .claude/skills에 설치
+└── scripts/theme-to-css.py      # 테마 파일 → CSS 변수 (Tailwind v4 / 순수 CSS / shadcn)
 ```
 
 ## 설치 (claude.ai)
+
+> Claude Code는 `scripts/install-claude-code.sh` — [Claude Code 가이드](guides/claude-code.md)
 
 > 업로드 없이 쓰려면 [설치 없이 사용하기](guides/no-install.md)
 

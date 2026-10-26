@@ -30,7 +30,7 @@ ppt-master 스킬을 **생성 엔진**으로 쓰고, 이 스킬의 표준·프�
    - 첨부된 구성 문서에서 표준 2장 필수 항목 확인, 누락 항목은 `[자료 필요]` 목록으로 정리
    - 구성 문서가 없으면 `references/PPT-OUTLINE-TEMPLATE.md` 기준으로 고객·청중, 목적, 덱 핵심 메시지, 장수 제한 4가지만 사용자에게 묻고, 나머지는 첨부 자료로 초안 작성 후 확인받음
 3. **스토리라인 먼저**: 장표별 제목·핵심 메시지 줄·본문 요소 표를 사용자에게 보여 주고 확인받음 (사용자가 "확인 없이", "빠르게"를 요청하면 생략)
-4. **엔진 로드**: ppt-master 스킬을 Skill 도구로 불러오거나, `find /mnt/skills -path '*ppt-master/SKILL.md'`로 찾아 읽고 그 실행 절차를 따름
+4. **엔진 로드**: ppt-master 스킬을 Skill 도구로 불러오거나, `find /mnt/skills ~/.claude/skills .claude/skills -path '*ppt-master/SKILL.md' 2>/dev/null`로 찾아 읽고 그 실행 절차를 따름
 5. **생성**: ppt-master 절차대로 슬라이드 마스터 → 장표 작성 → 렌더링 점검 → PPTX 변환
    - 폰트는 `profile.md` 지정 폰트로 명시 (ppt-master 한국어 기본값 맑은 고딕 대신)
    - 텍스트 넘침은 글자 축소가 아니라 문장 압축으로 해결

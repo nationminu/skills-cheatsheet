@@ -1,3 +1,5 @@
 shared/web/DASHBOARD-DESIGN.md
 shared/web/THEME-CONTRACT.md
 shared/web/themes/*.md
+shared/web/adapters/*.md
+scripts/theme-to-css.py

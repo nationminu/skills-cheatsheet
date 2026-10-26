@@ -12,7 +12,7 @@
    - 엔진이 여러 개면 **엔진 표**(단계 · 엔진 스킬 · 쓰는 범위)를 두고, 엔진 기본값 중 표준이 이기는 항목을 우선순위에 명시 (예: `web-admin`)
    - 엔진이 설치 안 된 경우의 대체 동작 한 줄 기재
 4. `profile.md` 작성 (선택) — 같은 표준을 여러 용도로 나눌 때만, **공통 표준에서 바꾸는 값만** 표로. 용도가 하나면 파일 삭제하고 SKILL.md 파일 표에서도 제거
-5. `bundle.txt`에 필요한 `shared/` 파일 경로 기재
+5. `bundle.txt`에 필요한 파일 경로 기재 — `shared/<계열>/x` → 스킬의 `references/x`, `scripts/x` → 스킬의 `scripts/x`, glob 허용(`shared/web/themes/*.md`)
 6. `scripts/build.sh {스킬명}` → `dist/{스킬명}.zip` 생성, 업로드 후 테스트
 7. 루트 `README.md` 치트시트·로드맵 표에 한 줄 추가
 
@@ -21,6 +21,11 @@
 - 원본은 `shared/` 한 곳만 수정 — 스킬 폴더 안에 표준 사본을 직접 두지 않음
 - 수정 후 `scripts/build.sh` 전체 빌드 → 해당 스킬 전부 재업로드
 - 표준 변경은 PR + 팀 리뷰 후 병합
+
+## 외부 템플릿·라이브러리 연결
+
+- `shared/<계열>/adapters/{이름}.md`에 대응표·치환표, 가져올 것/가져오지 않을 것, 확인 날짜·라이선스 기재 (예: `shared/web/adapters/tailadmin.md`)
+- 외부 코드 자체는 레포에 넣지 않음 — 표준·치환 규칙만
 
 ## 새 엔진 계열 추가 (예: drawio, docx, web)
 

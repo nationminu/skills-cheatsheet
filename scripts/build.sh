@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # skills/<스킬>/ 을 claude.ai 업로드용 zip으로 패키징
-# - bundle.txt 에 적힌 shared/ 파일을 references/ 로 복사 (업로드 스킬은 자기 폴더만 볼 수 있음)
+# - bundle.txt 에 적힌 shared/ 파일은 references/, scripts/ 파일은 scripts/ 로 복사 (업로드 스킬은 자기 폴더만 볼 수 있음)
 # 사용: scripts/build.sh            # 전체
 #       scripts/build.sh ppt-report   # 하나만
 set -euo pipefail
@@ -23,9 +23,14 @@ build() {
       for f in $ROOT/$pat; do
         [[ -f "$f" ]] || continue
         matched=1
-        local rel="${f#$ROOT/shared/*/}"
-        mkdir -p "$out/references/$(dirname "$rel")"
-        cp "$f" "$out/references/$rel"
+        local dest
+        case "$f" in
+          "$ROOT"/shared/*) dest="references/${f#$ROOT/shared/*/}" ;;   # shared/<계열>/x → references/x
+          "$ROOT"/scripts/*) dest="scripts/${f#$ROOT/scripts/}" ;;      # scripts/x → scripts/x
+          *) echo "error: $name — shared/ 또는 scripts/ 아래 파일만 번들 가능: $pat"; exit 1 ;;
+        esac
+        mkdir -p "$out/$(dirname "$dest")"
+        cp "$f" "$out/$dest"
       done
       [[ $matched == 1 ]] || { echo "error: $name — bundle 경로 없음: $pat"; exit 1; }
     done < "$src/bundle.txt"
