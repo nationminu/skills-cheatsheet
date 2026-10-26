@@ -1,9 +1,9 @@
 ---
-name: om-web-admin
-description: 오픈마루 표준 업무 시스템(관리자 대시보드) 화면 제작·수정. "관리자 화면", "어드민 대시보드", "업무 시스템 UI", "om-web-admin"으로 요청하거나 사내 업무 시스템의 목록·입력·서랍·대시보드 화면을 만들 때 사용. 업무 시스템 디자인 시스템(Tailwind CSS v4 토큰 + Lucide)을 frontend-design·web-design-guidelines 스킬 위에 덮어씌워 같은 밀도·위계의 화면을 만든다.
+name: web-admin
+description: 오픈마루 표준 업무 시스템(관리자 대시보드) 화면 제작·수정. "관리자 화면", "어드민 대시보드", "업무 시스템 UI", "web-admin"으로 요청하거나 사내 업무 시스템의 목록·입력·서랍·대시보드 화면을 만들 때 사용. 업무 시스템 디자인 시스템(Tailwind CSS v4 토큰 + Lucide)을 frontend-design·web-design-guidelines 스킬 위에 덮어씌워 같은 밀도·위계의 화면을 만든다.
 ---
 
-# om-web-admin — 오픈마루 표준 업무 시스템 화면
+# web-admin — 오픈마루 표준 업무 시스템 화면
 
 여러 엔진 스킬을 단계별로 쓰고, 이 스킬의 디자인 시스템을 **규칙**으로 적용하는 오버레이 스킬.
 

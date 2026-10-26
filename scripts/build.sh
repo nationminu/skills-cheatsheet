@@ -2,7 +2,7 @@
 # skills/<스킬>/ 을 claude.ai 업로드용 zip으로 패키징
 # - bundle.txt 에 적힌 shared/ 파일을 references/ 로 복사 (업로드 스킬은 자기 폴더만 볼 수 있음)
 # 사용: scripts/build.sh            # 전체
-#       scripts/build.sh om-ppt-report   # 하나만
+#       scripts/build.sh ppt-report   # 하나만
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 DIST="$ROOT/dist"

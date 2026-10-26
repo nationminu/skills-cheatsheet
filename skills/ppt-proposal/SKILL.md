@@ -1,9 +1,9 @@
 ---
-name: om-ppt-briefing
-description: 오픈마루 표준 내부 브리핑 PPT 생성(1~5장). "브리핑 PPT", "내부 보고 장표", "한 장 요약", "om-ppt-briefing"으로 요청하거나 팀장·임원 보고용 짧은 PPTX를 요청할 때 사용. ppt-master 위에 오픈마루 생성 표준과 브리핑 프로필을 덮어씌워 편집 가능한 네이티브 PPTX를 만든다.
+name: ppt-proposal
+description: 오픈마루 표준 고객 제안서 PPT 생성. "제안서 PPT", "제안 덱", "ppt-proposal"로 요청하거나 고객 의사결정자에게 발표·배포할 기술 제안 PPTX를 요청할 때 사용. ppt-master 위에 오픈마루 생성 표준과 제안서 프로필을 덮어씌워 편집 가능한 네이티브 PPTX를 만든다.
 ---
 
-# om-ppt-briefing — 오픈마루 표준 내부 브리핑
+# ppt-proposal — 오픈마루 표준 제안서
 
 ppt-master 스킬을 **생성 엔진**으로 쓰고, 이 스킬의 표준·프로필을 **규칙**으로 적용하는 오버레이 스킬.
 
@@ -12,7 +12,7 @@ ppt-master 스킬을 **생성 엔진**으로 쓰고, 이 스킬의 표준·프�
 | 파일 | 역할 |
 | --- | --- |
 | `references/PPT-MASTER_생성표준.md` | 공통 표준 (역할·사실 원칙·작성 원칙·디자인·점검표) |
-| `profile.md` | 브리핑 프로필 — 공통 표준 중 이 용도에서 바꾸는 값 |
+| `profile.md` | 제안서 프로필 — 공통 표준 중 이 용도에서 바꾸는 값 |
 | `references/구성문서_양식.md` | 업무별 구성 문서 양식 |
 
 ## 규칙 우선순위

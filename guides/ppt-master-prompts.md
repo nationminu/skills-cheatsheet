@@ -1,6 +1,6 @@
 # ppt-master 요청 문구 모음
 
-> 오버레이 스킬 사용 시 표준 첨부·스킬명 대신 `om-ppt-proposal` / `om-ppt-report` / `om-ppt-briefing` 으로 바꿔 사용
+> 오버레이 스킬 사용 시 표준 첨부·스킬명 대신 `ppt-proposal` / `ppt-report` / `ppt-briefing` 으로 바꿔 사용
 
 > 표준 문서와 구성 문서를 **첨부한 상태**에서 사용, `{ }` 부분만 바꿔서 복사
 
