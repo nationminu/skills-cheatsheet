@@ -22,11 +22,11 @@
 | `ppt-proposal` | `shared/ppt/PPT-MASTER.md` | `skills/ppt-proposal/SKILL.md` | 구성 문서, 근거 자료 |
 | `ppt-report` | `shared/ppt/PPT-MASTER.md` + `skills/ppt-report/profile.md` | `skills/ppt-report/SKILL.md` | 점검 결과, 로그, 측정값 |
 | `ppt-briefing` | `shared/ppt/PPT-MASTER.md` + `skills/ppt-briefing/profile.md` | `skills/ppt-briefing/SKILL.md` | 보고할 내용 |
-| `web-admin` | `shared/web/WEB-DESIGN.md` | `skills/web-admin/SKILL.md`, 테마 지정 시 `THEME-CONTRACT.md` + `themes/{테마}.md` | 화면 요구사항, 설계 문서 |
+| `web-admin` | `shared/web/DASHBOARD-DESIGN.md` | `skills/web-admin/SKILL.md`, 테마 지정 시 `THEME-CONTRACT.md` + `themes/{테마}.md` | 화면 요구사항, 설계 문서 |
 
 | 파일 | 역할 | 빠지면 |
 | --- | --- | --- |
-| `PPT-MASTER.md` / `WEB-DESIGN.md` | 공통 표준 (디자인·문장·점검표) | 엔진 기본 스타일로 생성 |
+| `PPT-MASTER.md` / `DASHBOARD-DESIGN.md` | 공통 표준 (디자인·문장·점검표) | 엔진 기본 스타일로 생성 |
 | `profile.md` | 용도별 차이 (요약 장, 노트 여부, 장수 등) | 제안서 기준(`PPT-MASTER.md` 기본값)으로 생성 |
 | `SKILL.md` | 실행 절차 (스토리라인 먼저, 점검 후 제출 등) | 절차가 생략되거나 순서가 달라질 수 있음 |
 | `PPT-OUTLINE-TEMPLATE.md` | 구성 문서 양식 | 구성 문서가 없을 때만 첨부 — Claude가 양식대로 초안 작성 |
@@ -60,8 +60,8 @@ ppt-master 스킬로 첨부한 점검 결과 보고서를 PPT로 만들어줘.
 | --- | --- | --- |
 | `ppt-proposal` | `PPT-MASTER.md`, 구성 문서 | `PPT-MASTER.md 표준에 따라 ppt-master 스킬로 첨부한 구성 문서 내용의 제안서 PPT 만들어줘` |
 | `ppt-briefing` | `SKILL.md`, `profile.md`, `PPT-MASTER.md`, 보고 내용 | `첨부한 SKILL.md·profile.md·PPT-MASTER.md 기준으로 ppt-master 스킬로 3장 내부 브리핑 만들어줘` |
-| `web-admin` | `SKILL.md`, `WEB-DESIGN.md`, 요구사항 | `첨부한 SKILL.md 절차와 WEB-DESIGN.md 디자인 시스템으로 자재 입고 목록 화면 만들어줘` |
-| `web-admin` + 테마 | 위 파일 + `THEME-CONTRACT.md`, `slate.md` | `첨부한 SKILL.md 절차, WEB-DESIGN.md 구조, slate.md 테마로 다크 모드 기본 대시보드 만들어줘` |
+| `web-admin` | `SKILL.md`, `DASHBOARD-DESIGN.md`, 요구사항 | `첨부한 SKILL.md 절차와 DASHBOARD-DESIGN.md 디자인 시스템으로 자재 입고 목록 화면 만들어줘` |
+| `web-admin` + 테마 | 위 파일 + `THEME-CONTRACT.md`, `slate.md` | `첨부한 SKILL.md 절차, DASHBOARD-DESIGN.md 구조, slate.md 테마로 다크 모드 기본 대시보드 만들어줘` |
 
 ## 4. 매번 첨부하지 않으려면
 

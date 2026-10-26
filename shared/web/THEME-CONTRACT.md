@@ -1,6 +1,9 @@
 # 웹 테마 계약 (Theme Contract)
 
-> `WEB-DESIGN.md`는 **구조**(레이아웃·컴포넌트·화면 패턴·문구·접근성), `themes/*.md`는 **색상 값**을 담당
+> 적용 범위: **대시보드 디자인(`DASHBOARD-DESIGN.md`)** 테마 — 사이드바(`nav*`) 등 대시보드 전용 토큰 포함
+> 이후 작성할 서비스 프론트 디자인(`FRONT-DESIGN.md`)은 별도 토큰 체계, 공통 토큰을 나눌 경우 이 문서를 개정
+
+> `DASHBOARD-DESIGN.md`는 **구조**(레이아웃·컴포넌트·화면 패턴·문구·접근성), `themes/*.md`는 **색상 값**을 담당
 > 테마를 바꿔도 화면 코드는 그대로 — 같은 토큰 이름에 다른 값만 넣는 방식
 
 ## 1. 계층
@@ -8,7 +11,7 @@
 ```text
 [이번 요청의 화면 사양]   사이드바·헤더·카드 3개·차트·표 …      ← 무엇을 그릴지
 [themes/{테마}.md]        colors (light / dark)                 ← 무슨 색으로
-[WEB-DESIGN.md]           typography · spacing · rounded · components · 패턴 · 규칙  ← 어떻게
+[DASHBOARD-DESIGN.md]           typography · spacing · rounded · components · 패턴 · 규칙  ← 어떻게
 ```
 
 - 테마가 바꾸는 것: `colors` 토큰 값 (모드별), 테마별 차트 색 순서

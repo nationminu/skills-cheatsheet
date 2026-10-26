@@ -20,7 +20,8 @@
 
 ## 웹 테마
 
-- **구조**(`WEB-DESIGN.md`)와 **색상**(`themes/*.md`) 분리 → 같은 토큰 이름에 값만 교체, 화면 코드는 그대로
+- 웹 디자인 표준은 용도별로 분리: `DASHBOARD-DESIGN.md`(관리자·업무 시스템 대시보드) / `FRONT-DESIGN.md`(서비스 프론트, 예정)
+- **구조**(`DASHBOARD-DESIGN.md`)와 **색상**(`themes/*.md`) 분리 → 같은 토큰 이름에 값만 교체, 화면 코드는 그대로
 - 요청에서 테마 이름을 부르거나(`slate 테마로`), 분위기를 설명하면(`딥 블루 다크 톤`) 맞는 테마 적용, 없으면 새 테마 파일을 계약대로 만들어 함께 제출
 - 새 테마 추가: `shared/web/themes/{이름}.md` 작성 ([THEME-CONTRACT.md](shared/web/THEME-CONTRACT.md) 6장 형식, 대비 측정표 포함) → `python3 scripts/theme-to-css.py shared/web/themes/{이름}.md`로 검증 → 빌드
 
@@ -43,7 +44,7 @@
 [오버레이]    ppt-proposal | -report | -briefing          web-admin
               (+ 용도별 profile.md)
 [테마]        -                                           shared/web/themes/*.md  ← 색상만, 교체 가능
-[공통 표준]   shared/ppt/PPT-MASTER.md                    shared/web/WEB-DESIGN.md
+[공통 표준]   shared/ppt/PPT-MASTER.md                    shared/web/DASHBOARD-DESIGN.md
 [엔진]        ppt-master                                  frontend-design(구현) + web-design-guidelines(점검)
 
 위 계층이 아래 계층을 덮어씀 (같은 항목이면 위가 우선)
@@ -72,7 +73,7 @@ skills-cheatsheet/
 │   │   ├── PPT-MASTER.md
 │   │   └── PPT-OUTLINE-TEMPLATE.md
 │   └── web/
-│       ├── WEB-DESIGN.md        # 구조: 레이아웃·컴포넌트·패턴·문구 (colors = 기본 테마 값)
+│       ├── DASHBOARD-DESIGN.md  # 대시보드(관리자·업무 시스템) 구조: 레이아웃·컴포넌트·패턴·문구
 │       ├── THEME-CONTRACT.md    # 테마 규칙: 필수 토큰, 대비 기준, 라이트/다크 구현
 │       └── themes/              # 테마 = 색상 토큰만 (admin-navy 기본, slate 딥 블루 다크)
 ├── skills/                      # 오버레이 스킬 (폴더명 = 스킬명)
@@ -109,6 +110,7 @@ skills-cheatsheet/
 | `ppt-proposal` | ppt-master | v1.0 (표준 그대로) |
 | `ppt-report` | ppt-master | v0.1 초안 |
 | `ppt-briefing` | ppt-master | v0.1 초안 |
-| `web-admin` | frontend-design + web-design-guidelines | v1.0 (WEB-DESIGN.md 그대로) |
+| `web-admin` | frontend-design + web-design-guidelines | v1.0 (DASHBOARD-DESIGN.md 그대로) |
+| `web-front` (서비스 프론트, `FRONT-DESIGN.md`) | frontend-design + web-design-guidelines | 예정 |
 | `diagram-arch` (구성도 표준) | drawio | 예정 |
 | `docx-report` (Word 보고서 표준) | docx | 예정 |

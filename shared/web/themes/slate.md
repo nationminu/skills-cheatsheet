@@ -68,7 +68,7 @@ chart-order: [primary, chart-pending, success, danger]
 - **다크**: 바탕 `canvas` #0F172A(slate-900), 카드 `surface` #1E293B(slate-800), 사이드바 `nav` #020617(slate-950)로 한 단계 더 어둡게 — 크롬은 어둡게, 작업 영역은 한 단계 밝게
 - **라이트**: 바탕 slate-50, 흰 카드, 사이드바는 다크와 같은 slate-900 유지 (모드가 바뀌어도 탐색 위치 인지 유지)
 - **행동색**: 다크에서는 밝은 파랑 `#60A5FA` + 버튼 글자 `surface`(어두운 색), 라이트에서는 `#2563EB` + 흰 글자
-- 구조·크기·컴포넌트는 `WEB-DESIGN.md` 그대로, 이 파일은 색만 담당 (`THEME-CONTRACT.md`)
+- 구조·크기·컴포넌트는 `DASHBOARD-DESIGN.md` 그대로, 이 파일은 색만 담당 (`THEME-CONTRACT.md`)
 
 ## 대비 측정 (WCAG 2.x)
 

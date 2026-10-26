@@ -1,6 +1,6 @@
 ---
 name: admin-navy
-description: 기본 테마 — 밝은 회청색 작업 영역 + 짙은 남색 사이드바 (WEB-DESIGN.md 기본값)
+description: 기본 테마 — 밝은 회청색 작업 영역 + 짙은 남색 사이드바 (DASHBOARD-DESIGN.md 기본값)
 modes: [light]
 default-mode: light
 colors:
@@ -36,8 +36,8 @@ chart-order: [primary, chart-pending, success, danger]
 
 # admin-navy 테마 (기본)
 
-`WEB-DESIGN.md`의 YAML `colors`와 같은 값. 테마를 지정하지 않으면 이 테마 적용.
+`DASHBOARD-DESIGN.md`의 YAML `colors`와 같은 값. 테마를 지정하지 않으면 이 테마 적용.
 
 - 라이트 모드만 정의 — "다크 모드 지원" 요청 시 `dark` 블록을 `THEME-CONTRACT.md` 기준으로 추가하거나 `slate` 테마 사용
-- 대비 측정값·색약 검사 결과는 `WEB-DESIGN.md` Colors 섹션 참고 (차트 순서 근거 포함)
-- 값을 바꿀 때는 `WEB-DESIGN.md` YAML과 이 파일을 함께 수정
+- 대비 측정값·색약 검사 결과는 `DASHBOARD-DESIGN.md` Colors 섹션 참고 (차트 순서 근거 포함)
+- 값을 바꿀 때는 `DASHBOARD-DESIGN.md` YAML과 이 파일을 함께 수정
