@@ -1,2 +1,3 @@
 shared/ppt/PPT-MASTER.md
 shared/ppt/PPT-OUTLINE-TEMPLATE.md
+shared/ppt/assets/*
