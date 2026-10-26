@@ -11,24 +11,24 @@ ppt-master 스킬을 **생성 엔진**으로 쓰고, 이 스킬의 표준·프�
 
 | 파일 | 역할 |
 | --- | --- |
-| `references/PPT-MASTER_생성표준.md` | 공통 표준 (역할·사실 원칙·작성 원칙·디자인·점검표) |
+| `references/PPT-MASTER.md` | 공통 표준 (역할·사실 원칙·작성 원칙·디자인·점검표) |
 | `profile.md` | 브리핑 프로필 — 공통 표준 중 이 용도에서 바꾸는 값 |
-| `references/구성문서_양식.md` | 업무별 구성 문서 양식 |
+| `references/PPT-OUTLINE-TEMPLATE.md` | 업무별 구성 문서 양식 |
 
 ## 규칙 우선순위
 
 1. 사용자의 이번 요청
 2. 업무별 구성 문서
 3. `profile.md`
-4. `references/PPT-MASTER_생성표준.md`
+4. `references/PPT-MASTER.md`
 5. ppt-master 원본 워크플로우 기본값 (디자인·폰트·문장 규칙이 위와 충돌하면 위를 따름, 생성 절차·도구 사용법은 ppt-master를 따름)
 
 ## 실행 절차
 
-1. **규칙 로드**: `profile.md`와 `references/PPT-MASTER_생성표준.md`를 끝까지 읽음
+1. **규칙 로드**: `profile.md`와 `references/PPT-MASTER.md`를 끝까지 읽음
 2. **구성 문서 확인**
    - 첨부된 구성 문서에서 표준 2장 필수 항목 확인, 누락 항목은 `[자료 필요]` 목록으로 정리
-   - 구성 문서가 없으면 `references/구성문서_양식.md` 기준으로 고객·청중, 목적, 덱 핵심 메시지, 장수 제한 4가지만 사용자에게 묻고, 나머지는 첨부 자료로 초안 작성 후 확인받음
+   - 구성 문서가 없으면 `references/PPT-OUTLINE-TEMPLATE.md` 기준으로 고객·청중, 목적, 덱 핵심 메시지, 장수 제한 4가지만 사용자에게 묻고, 나머지는 첨부 자료로 초안 작성 후 확인받음
 3. **스토리라인 먼저**: 장표별 제목·핵심 메시지 줄·본문 요소 표를 사용자에게 보여 주고 확인받음 (사용자가 "확인 없이", "빠르게"를 요청하면 생략)
 4. **엔진 로드**: ppt-master 스킬을 Skill 도구로 불러오거나, `find /mnt/skills -path '*ppt-master/SKILL.md'`로 찾아 읽고 그 실행 절차를 따름
 5. **생성**: ppt-master 절차대로 슬라이드 마스터 → 장표 작성 → 렌더링 점검 → PPTX 변환

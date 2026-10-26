@@ -11,7 +11,7 @@
 | --- | --- |
 | 쓰는 경우 | 고객 제안서, 기술 보고서, 내부 보고 덱 — 받은 뒤 **직접 수정**해야 하는 PPT |
 | 안 쓰는 경우 | 한두 장짜리 간단 정리(대화로 충분), 이미지 한 장으로 끝나는 구성도(drawio 스킬) |
-| 입력 | ① 공통 표준 `shared/ppt/PPT-MASTER_생성표준.md` ② 업무별 구성 문서 ③ 근거 자료(제안요청서, 기술 문서 등) |
+| 입력 | ① 공통 표준 `shared/ppt/PPT-MASTER.md` ② 업무별 구성 문서 ③ 근거 자료(제안요청서, 기술 문서 등) |
 | 출력 | `.pptx` 파일 + 스토리라인 표 + `[자료 필요]`·`[확인 필요]` 목록 |
 | 소요 | 10장 기준 수십 분 (렌더링·점검 반복 포함) |
 
@@ -33,8 +33,8 @@
 
 | 문서 | 역할 | 바뀌는 주기 | 위치 |
 | --- | --- | --- | --- |
-| **생성 표준** | 역할, 사실 원칙, 작성 원칙, 디자인(색·폰트·레이아웃), 점검표 | 거의 고정 (팀 합의로 개정) | [`shared/ppt/PPT-MASTER_생성표준.md`](../shared/ppt/PPT-MASTER_생성표준.md) |
-| **업무별 구성 문서** | 고객·청중, 목적, 핵심 메시지, 장표 구성, 산출물 | 업무마다 새로 작성 | [`shared/ppt/구성문서_양식.md`](../shared/ppt/구성문서_양식.md) 복사 |
+| **생성 표준** | 역할, 사실 원칙, 작성 원칙, 디자인(색·폰트·레이아웃), 점검표 | 거의 고정 (팀 합의로 개정) | [`shared/ppt/PPT-MASTER.md`](../shared/ppt/PPT-MASTER.md) |
+| **업무별 구성 문서** | 고객·청중, 목적, 핵심 메시지, 장표 구성, 산출물 | 업무마다 새로 작성 | [`shared/ppt/PPT-OUTLINE-TEMPLATE.md`](../shared/ppt/PPT-OUTLINE-TEMPLATE.md) 복사 |
 
 **왜 나누는가**
 - 디자인·문장 규칙을 매번 다시 쓰지 않음 → 팀 전체 덱의 일관성 유지
@@ -45,7 +45,7 @@
 
 ### Step 1. 업무별 구성 문서 작성
 
-1. `shared/ppt/구성문서_양식.md` 복사 → 파일명 변경 (예: `20261020_예시기관_PPT구성.md`)
+1. `shared/ppt/PPT-OUTLINE-TEMPLATE.md` 복사 → 파일명 변경 (예: `20261020_예시기관_PPT구성.md`)
 2. 표준 2장의 **필수 항목 12개** 채우기 — 비워 둔 항목은 결과의 `[자료 필요]` 목록으로 돌아옴
 3. 가장 공들일 곳: **덱 핵심 메시지 한 줄**과 **장표별 핵심 메시지 줄** — 이것만 이어 읽어도 제안이 이해되면 성공
 
@@ -55,7 +55,7 @@
 - 요청 문구 (기본형):
 
 ```text
-ppt-master 스킬로, PPT-MASTER_생성표준.md 표준에 따라
+ppt-master 스킬로, PPT-MASTER.md 표준에 따라
 20261020_예시기관_PPT구성.md 내용으로 PPT 생성해줘.
 ```
 
@@ -100,8 +100,8 @@ ppt-master 스킬로, PPT-MASTER_생성표준.md 표준에 따라
 
 ## 7. 관련 파일
 
-- [`shared/ppt/PPT-MASTER_생성표준.md`](../shared/ppt/PPT-MASTER_생성표준.md) — 공통 생성 표준
-- [`shared/ppt/구성문서_양식.md`](../shared/ppt/구성문서_양식.md) — 업무별 구성 문서 양식
+- [`shared/ppt/PPT-MASTER.md`](../shared/ppt/PPT-MASTER.md) — 공통 생성 표준
+- [`shared/ppt/PPT-OUTLINE-TEMPLATE.md`](../shared/ppt/PPT-OUTLINE-TEMPLATE.md) — 업무별 구성 문서 양식
 - [`ppt-master-prompts.md`](ppt-master-prompts.md) — 요청 문구 모음
 
 ## 변경 이력

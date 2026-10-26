@@ -7,14 +7,14 @@
 ## 1. 기본 생성
 
 ```text
-ppt-master 스킬로, PPT-MASTER_생성표준.md 표준에 따라
+ppt-master 스킬로, PPT-MASTER.md 표준에 따라
 {YYYYMMDD_고객명_PPT구성.md} 내용으로 PPT 생성해줘.
 ```
 
 ## 2. 스토리라인 먼저 (권장)
 
 ```text
-ppt-master 스킬로 PPT-MASTER_생성표준.md 표준과 {구성 문서} 기준
+ppt-master 스킬로 PPT-MASTER.md 표준과 {구성 문서} 기준
 스토리라인 표(장표별 제목·핵심 메시지 줄·본문 요소)만 먼저 작성해줘.
 장표는 아직 만들지 말고, [자료 필요]·[확인 필요] 목록도 같이 줘.
 ```
@@ -29,7 +29,7 @@ ppt-master 스킬로 PPT-MASTER_생성표준.md 표준과 {구성 문서} 기준
 
 ```text
 ppt-master 스킬로 빠르게 초안 만들어줘. 중간 확인 없이 진행.
-표준: PPT-MASTER_생성표준.md / 내용: {구성 문서}
+표준: PPT-MASTER.md / 내용: {구성 문서}
 ```
 
 ## 4. 장표 단위 수정
@@ -48,7 +48,7 @@ ppt-master 스킬로 빠르게 초안 만들어줘. 중간 확인 없이 진행.
 ## 5. 기존 PPTX 활용
 
 ```text
-ppt-master 스킬로 첨부한 {기존.pptx}를 PPT-MASTER_생성표준.md 디자인 표준에 맞게 리디자인해줘.
+ppt-master 스킬로 첨부한 {기존.pptx}를 PPT-MASTER.md 디자인 표준에 맞게 리디자인해줘.
 내용·수치는 그대로 유지, 장표 구성은 바꾸지 말 것.
 ```
 
@@ -66,6 +66,6 @@ ppt-master 스킬로 첨부한 {템플릿.pptx}의 마스터를 사용해서 {�
 ## 7. 최종 점검만
 
 ```text
-첨부한 {pptx}를 PPT-MASTER_생성표준.md 10장 완료 전 점검표 기준으로 점검하고
+첨부한 {pptx}를 PPT-MASTER.md 10장 완료 전 점검표 기준으로 점검하고
 위반 항목을 장표 번호별로 정리해줘. 수정은 하지 말 것.
 ```
