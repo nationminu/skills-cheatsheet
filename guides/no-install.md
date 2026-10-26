@@ -30,7 +30,7 @@
 | `profile.md` | 용도별 차이 (요약 장, 노트 여부, 장수 등) | 제안서 기준(`PPT-MASTER.md` 기본값)으로 생성 |
 | `SKILL.md` | 실행 절차 (스토리라인 먼저, 점검 후 제출 등) | 절차가 생략되거나 순서가 달라질 수 있음 |
 | `PPT-OUTLINE-TEMPLATE.md` | 구성 문서 양식 | 구성 문서가 없을 때만 첨부 — Claude가 양식대로 초안 작성 |
-| `assets/cover-layout.svg` | 표지 고정 레이아웃 그림 | 표준 6.9 치수만으로 생성 (첨부하면 표지 재현이 더 정확) |
+| `assets/cover-layout.svg`, `assets/body-layout.svg` | 표지·본문 고정 레이아웃 그림 | 표준 6.9·6.5 치수만으로 생성 (첨부하면 재현이 더 정확) |
 
 > ⚠️ `profile.md`·`SKILL.md`는 스킬마다 파일명이 같음 → **한 번에 한 스킬 것만 첨부**, 여러 스킬 것을 함께 쓸 때는 받은 파일명을 `ppt-report_profile.md`처럼 바꿔서 첨부
 

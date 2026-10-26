@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1333.3 750" width="1333" height="750" font-family="Pretendard Variable, Pretendard, 'Noto Sans CJK KR', 'Malgun Gothic', sans-serif">
+  <!-- 본문 고정 레이아웃 와이어프레임 — PPT-MASTER.md 6.5 / 1 in = 100 단위, 16:9 (13.333 x 7.5 in), 좌우 여백 0.6 in -->
+  <rect width="1333.3" height="750" fill="#FFFFFF"/>
+
+  <!-- ① 트래커 (선택): 막대 y 0.35, 라벨 9 pt -->
+  <rect x="60" y="35" width="32" height="2.8" fill="#0B1F3A"/>
+  <g font-size="12.5" fill="#5B6577">
+    <text x="60" y="54" font-weight="700" fill="#0B1F3A">{장 1}</text>
+    <text x="117" y="54">{장 2}</text>
+    <text x="174" y="54">{장 3}</text>
+    <text x="231" y="54">{장 4}</text>
+    <text x="288" y="54">{장 5}</text>
+  </g>
+
+  <!-- ② 제목 22 pt / ③ 부제 14 pt -->
+  <text x="60" y="112" font-size="30.6" font-weight="700" fill="#0B1F3A">{장표 제목}</text>
+  <text x="60" y="146" font-size="19.4" font-weight="600" fill="#222222">{핵심 메시지 줄 — 명사형 결론 한 줄}</text>
+
+  <!-- ④ 상단 선 y 1.67 -->
+  <rect x="60" y="166.5" width="1213.3" height="1" fill="#8A94A6"/>
+
+  <!-- ⑤ 내용 y 1.87 ~ 6.70, 12열 그리드 (열 간격 0.25 in) -->
+  <g fill="#EEF1F5">
+    <rect x="60.0" y="187" width="78.2" height="483"/><rect x="163.2" y="187" width="78.2" height="483"/>
+    <rect x="266.4" y="187" width="78.2" height="483"/><rect x="369.6" y="187" width="78.2" height="483"/>
+    <rect x="472.8" y="187" width="78.2" height="483"/><rect x="576.0" y="187" width="78.2" height="483"/>
+    <rect x="679.2" y="187" width="78.2" height="483"/><rect x="782.4" y="187" width="78.2" height="483"/>
+    <rect x="885.6" y="187" width="78.2" height="483"/><rect x="988.8" y="187" width="78.2" height="483"/>
+    <rect x="1092.0" y="187" width="78.2" height="483"/><rect x="1195.2" y="187" width="78.2" height="483"/>
+  </g>
+  <rect x="60" y="187" width="1213.3" height="483" fill="none" stroke="#8A94A6" stroke-dasharray="6 4"/>
+  <text x="666.7" y="420" font-size="19.4" font-weight="600" fill="#5B6577" text-anchor="middle">⑤ 내용 영역 — 12열 그리드</text>
+  <text x="666.7" y="446" font-size="12.5" fill="#5B6577" text-anchor="middle">1단 / 2단 6:6 / 2단 4:8 / 3단 4:4:4 · 열 간격 0.25 in · 상단 선과 하단 선 사이를 벗어나지 않음</text>
+
+  <!-- ⑥ 하단 선 y 6.95 / ⑦ 페이징 9 pt 오른쪽 정렬 -->
+  <rect x="60" y="694.5" width="1213.3" height="1" fill="#8A94A6"/>
+  <text x="1273.3" y="718" font-size="12.5" fill="#5B6577" text-anchor="end">{회사명} | 02</text>
+
+  <!-- 치수 주석 (실제 장표에는 없음) -->
+  <g fill="#1F6FEB" font-size="11">
+    <text x="360" y="54">① 트래커 — 본문 10장 이상 또는 라벨 6개 이상이면 생략 가능 (자리는 비워 둠)</text>
+    <text x="1273" y="112" text-anchor="end">② 제목 22 pt Bold · y 0.85 in</text>
+    <text x="1273" y="146" text-anchor="end">③ 부제 14 pt SemiBold · y 1.28 in</text>
+    <text x="1273" y="182" text-anchor="end">④ 상단 선 y 1.67 in · 0.75 pt Gray</text>
+    <text x="60" y="688">⑥ 하단 선 y 6.95 in</text>
+    <text x="60" y="718">좌우 여백 0.6 in · 콘텐츠 폭 12.133 in</text>
+    <text x="1180" y="740" text-anchor="end">⑦ 페이징 9 pt · y 7.07 in</text>
+  </g>
+</svg>
