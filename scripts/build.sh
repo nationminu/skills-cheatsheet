@@ -16,9 +16,18 @@ build() {
   mkdir -p "$out/references"
   cp -R "$src/." "$out/" && rm -f "$out/bundle.txt"
   if [[ -f "$src/bundle.txt" ]]; then
-    while IFS= read -r f; do
-      [[ -z "$f" || "$f" == \#* ]] && continue
-      cp "$ROOT/$f" "$out/references/"
+    # shared/<계열>/ 아래 경로를 유지해 references/ 로 복사 (glob 허용: shared/web/themes/*.md)
+    while IFS= read -r pat; do
+      [[ -z "$pat" || "$pat" == \#* ]] && continue
+      local matched=0
+      for f in $ROOT/$pat; do
+        [[ -f "$f" ]] || continue
+        matched=1
+        local rel="${f#$ROOT/shared/*/}"
+        mkdir -p "$out/references/$(dirname "$rel")"
+        cp "$f" "$out/references/$rel"
+      done
+      [[ $matched == 1 ]] || { echo "error: $name — bundle 경로 없음: $pat"; exit 1; }
     done < "$src/bundle.txt"
   fi
   (cd "$DIST" && zip -qr "$name.zip" "$name")

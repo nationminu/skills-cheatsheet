@@ -165,6 +165,8 @@ components:
 
 ## Colors
 
+> 아래 값은 **기본 테마 `admin-navy`**. 색만 바꾸는 테마(다크 모드 포함)는 `themes/*.md`, 테마 규칙은 `THEME-CONTRACT.md` — 화면 코드는 토큰 이름만 쓰므로 테마를 바꿔도 수정 없음
+
 | 토큰 | 값 | 용도 |
 |---|---|---|
 | `canvas` | #F3F5F8 | 앱 바탕 |
