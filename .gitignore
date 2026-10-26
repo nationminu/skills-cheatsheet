@@ -11,3 +11,6 @@ Thumbs.db
 
 # 빌드 산출물
 dist/
+
+# Python
+__pycache__/

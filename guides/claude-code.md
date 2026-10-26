@@ -1,6 +1,6 @@
 # Claude Code에서 사용하기
 
-> 같은 오버레이 스킬을 claude.ai(채팅)와 Claude Code(개발 환경) 양쪽에서 사용
+> 같은 프리셋을 claude.ai(채팅)와 Claude Code(개발 환경) 양쪽에서 사용
 > 이 레포는 **Claude 전용** — 다른 AI 도구용 규칙 파일은 만들지 않음
 
 ## 1. 어디에 쓰나
@@ -33,10 +33,10 @@ scripts/install-claude-code.sh ~/work/my-admin web-admin   # 한 프로젝트에
 
 ## 3. 엔진 스킬
 
-| 오버레이 | 엔진 | Claude Code에서 |
+| 프리셋 | 엔진 | Claude Code에서 |
 | --- | --- | --- |
-| `ppt-*` | `ppt-master` | [원본 저장소](https://github.com/hugohe3/ppt-master)의 `skills/ppt-master/` 폴더를 `~/.claude/skills/ppt-master/`로 복사 (원본 의존성·설정은 저장소 README 확인) — 오버레이가 `~/.claude/skills`, `.claude/skills`에서 자동으로 찾음 |
-| `web-admin` | `frontend-design`, `web-design-guidelines` (선택) | 없어도 동작 — 오버레이 스킬의 표준과 체크리스트만으로 진행 |
+| `ppt-*` | `ppt-master` | [원본 저장소](https://github.com/hugohe3/ppt-master)의 `skills/ppt-master/` 폴더를 `~/.claude/skills/ppt-master/`로 복사 (원본 의존성·설정은 저장소 README 확인) — 프리셋이 `~/.claude/skills`, `.claude/skills`에서 자동으로 찾음 |
+| `web-admin` | `frontend-design`, `web-design-guidelines` (선택) | 없어도 동작 — 프리셋의 표준과 체크리스트만으로 진행 |
 
 ## 4. 사용
 

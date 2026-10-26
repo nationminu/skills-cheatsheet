@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# 오버레이 스킬을 Claude Code 스킬 폴더에 설치
+# 프리셋을 Claude Code 스킬 폴더에 설치
 # 사용: scripts/install-claude-code.sh --personal [스킬...]      # ~/.claude/skills/ (내 모든 프로젝트)
 #       scripts/install-claude-code.sh <프로젝트 경로> [스킬...]  # <프로젝트>/.claude/skills/ (커밋해서 팀 공유)
 # 스킬을 지정하지 않으면 skills/ 아래 전부 설치

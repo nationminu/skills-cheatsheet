@@ -1,6 +1,6 @@
 # 설치 없이 사용하기
 
-> 오버레이 스킬(`ppt-report` 등)을 claude.ai에 업로드하지 않고, **레포의 md 파일을 첨부**해서 같은 결과를 얻는 방법
+> 프리셋(`ppt-report` 등)을 claude.ai에 업로드하지 않고, **레포의 md 파일을 첨부**해서 같은 결과를 얻는 방법
 > 스킬 업로드 권한이 없거나, 한 번만 써 보거나, 표준을 고치면서 바로 시험할 때 사용
 
 ## 1. 필수 사항
@@ -69,7 +69,7 @@ ppt-master 스킬로 첨부한 점검 결과 보고서를 PPT로 만들어줘.
 - **claude.ai 프로젝트 사용**: 프로젝트를 하나 만들고 표준·프로필·SKILL.md를 프로젝트 파일로 등록 → 그 프로젝트 안의 대화에서는 첨부 없이 바로 요청
   - 예: 프로젝트 "PPT 보고서" = `PPT-MASTER.md` + `ppt-report/SKILL.md` + `ppt-report/profile.md`
   - 프로젝트 지침에 한 줄 추가: `PPT 요청은 프로젝트 파일의 SKILL.md 절차와 profile.md, PPT-MASTER.md 표준을 따라 ppt-master 스킬로 생성`
-- 계속 쓰게 되면 오버레이 스킬 설치로 전환 ([README 설치](../README.md#설치-claudeai))
+- 계속 쓰게 되면 프리셋 설치로 전환 ([README 설치](../README.md#설치-claudeai))
 
 ## 5. 설치 방식과 비교
 

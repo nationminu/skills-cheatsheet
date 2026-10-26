@@ -1,12 +1,12 @@
-# skills-cheatsheet
+# Skill Presets
 
-> 기본 스킬(ppt-master, frontend-design 등) 위에 **팀 표준을 덮어씌운 오버레이 스킬** 모음
-> 스킬 이름만 부르면 표준대로 결과가 나오게 하는 것이 목표
-> **Claude 전용** — claude.ai와 Claude Code에서 같은 스킬 사용 ([Claude Code 가이드](guides/claude-code.md))
+> Claude 기본 스킬에 팀 표준을 입혀, **이름만 부르면 같은 품질의 결과가 나오게 하는 프리셋** 모음
+> 내부 명칭: 치트시트 (`skills-cheatsheet`)
+> **Claude 전용** — claude.ai와 Claude Code에서 같은 프리셋 사용 ([Claude Code 가이드](guides/claude-code.md))
 
-## 치트시트
+## 빠른 사용표
 
-| 하고 싶은 것 | 스킬 | 이렇게 요청 | 결과 |
+| 하고 싶은 것 | 프리셋 | 이렇게 요청 | 결과 |
 | --- | --- | --- | --- |
 | 고객 제안서 덱 | `ppt-proposal` | `ppt-proposal로 첨부한 구성 문서 기준 제안서 만들어줘` | 겸용 PPTX + 발표자 노트, 8~15장 |
 | 설치·점검·PoC 결과 보고 | `ppt-report` | `ppt-report로 첨부한 점검 결과 보고서 만들어줘` | 정보 전달용 PPTX, 요약 장 필수 |
@@ -34,16 +34,18 @@
 
 ## 여러 스킬 함께 쓰기
 
-- 오버레이 스킬끼리 **동시에 설치·사용 가능** — 요청 문구에 맞는 스킬을 Claude가 골라 불러 씀
+- 프리셋끼리 **동시에 설치·사용 가능** — 요청 문구에 맞는 프리셋을 Claude가 골라 불러 씀
 - 한 작업에서 이어 쓰기도 가능: `web-admin으로 화면 만들고, 그 화면 캡처로 ppt-proposal 제안서 3장 추가해줘`
-- 하나의 오버레이가 **엔진 여러 개**를 단계별로 사용 가능 (예: `web-admin` = 구현 `frontend-design` + 점검 `web-design-guidelines`)
+- 하나의 프리셋이 **엔진 여러 개**를 단계별로 사용 가능 (예: `web-admin` = 구현 `frontend-design` + 점검 `web-design-guidelines`)
 - 호출이 겹치지 않게 각 `description`에 용도·호출 문구를 분명히 구분
 
-## 오버레이 구조
+## 동작 방식 (오버레이 구조)
+
+프리셋은 기본 스킬(엔진)을 고치지 않고 **위에 덮어씌우는(오버레이)** 방식 — 엔진은 생성 절차를, 프리셋은 표준·테마·용도별 규칙을 담당
 
 ```text
               PPT 계열                                  웹 계열
-[오버레이]    ppt-proposal | -report | -briefing          web-admin
+[프리셋]      ppt-proposal | -report | -briefing          web-admin
               (+ 용도별 profile.md)
 [테마]        -                                           shared/web/themes/*.md  ← 색상만, 교체 가능
 [공통 표준]   shared/ppt/PPT-MASTER.md                    shared/web/DASHBOARD-DESIGN.md
@@ -61,15 +63,15 @@
 
 **규칙 우선순위**: 이번 요청 > 구성 문서 > 프로필 > 공통 표준 > 엔진 기본값
 
-- 표준을 고치면 → 모든 오버레이 스킬에 반영 (다시 빌드·업로드)
+- 표준을 고치면 → 모든 프리셋에 반영 (다시 빌드·업로드)
 - 새 용도가 생기면 → 프로필만 새로 써서 스킬 하나 추가
 
 ## 폴더 구조
 
 ```text
 skills-cheatsheet/
-├── README.md                    # 치트시트 (이 문서)
-├── CONTRIBUTING.md              # 새 오버레이 스킬 만드는 법, 업로드 규칙
+├── README.md                    # 프리셋 목록·사용법 (이 문서)
+├── CONTRIBUTING.md              # 새 프리셋 만드는 법, 업로드 규칙
 ├── shared/                      # 여러 스킬이 공유하는 표준·양식 (원본은 여기 한 곳)
 │   ├── ppt/
 │   │   ├── PPT-MASTER.md
@@ -79,7 +81,7 @@ skills-cheatsheet/
 │       ├── THEME-CONTRACT.md    # 테마 규칙: 필수 토큰, 대비 기준, 라이트/다크 구현
 │       ├── themes/              # 테마 = 색상 토큰만 (admin-navy 기본, slate 딥 블루 다크)
 │       └── adapters/            # 외부 부품 연결: shadcn.md, tailadmin.md
-├── skills/                      # 오버레이 스킬 (폴더명 = 스킬명)
+├── skills/                      # 프리셋 (폴더명 = 스킬명)
 │   ├── ppt-proposal/
 │   │   ├── SKILL.md             # 호출 조건(description) + 실행 절차
 │   │   ├── profile.md           # 용도별 덮어쓰기 값
@@ -93,7 +95,7 @@ skills-cheatsheet/
 │   ├── ppt-master.md
 │   └── ppt-master-prompts.md
 ├── examples/web/                # 테마 적용 예시 화면 (가상 데이터)
-├── _template/overlay-skill/     # 새 오버레이 스킬 양식
+├── _template/preset/            # 새 프리셋 양식
 ├── scripts/build.sh             # skills/* → dist/*.zip (claude.ai 업로드용)
 ├── scripts/install-claude-code.sh  # 스킬을 ~/.claude/skills 또는 프로젝트 .claude/skills에 설치
 └── scripts/theme-to-css.py      # 테마 파일 → CSS 변수 (Tailwind v4 / 순수 CSS / shadcn)
@@ -112,7 +114,7 @@ skills-cheatsheet/
 
 ## 로드맵
 
-| 스킬 | 엔진 | 상태 |
+| 프리셋 | 엔진 | 상태 |
 | --- | --- | --- |
 | `ppt-proposal` | ppt-master | v1.0 (표준 그대로) |
 | `ppt-report` | ppt-master | v0.1 초안 |

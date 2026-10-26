@@ -3,7 +3,7 @@
 > 편집 가능한 **네이티브 PPTX**(텍스트·도형·표가 개체로 유지되는 파일)로 제안서·보고서 덱을 만드는 스킬
 > 원본: [hugohe3/ppt-master](https://github.com/hugohe3/ppt-master) — claude.ai용 스킬은 실행 시 원본 저장소를 받아 워크플로우를 로드하는 경량 래퍼
 
-> 💡 표준을 매번 첨부하지 않으려면 오버레이 스킬(`ppt-proposal` 등) 사용 — [README 치트시트](../README.md) 참고
+> 💡 표준을 매번 첨부하지 않으려면 프리셋(`ppt-proposal` 등) 사용 — [README 빠른 사용표](../README.md) 참고
 
 ## 1. 한눈에 보기
 

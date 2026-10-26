@@ -1,8 +1,10 @@
-# 오버레이 스킬 추가·수정 규칙
+# 프리셋 추가·수정 규칙
 
-## 새 오버레이 스킬 만들기
+> 공식 명칭은 **프리셋(Skill Presets)**, 내부에서는 치트시트로 부름 — 문서·스킬 안에는 공식 명칭 사용
 
-1. `_template/overlay-skill/` → `skills/{스킬명}/` 복사
+## 새 프리셋 만들기
+
+1. `_template/preset/` → `skills/{스킬명}/` 복사
 2. **스킬명 규칙**: `{엔진 분류}-{용도}` (예: `ppt-seminar`, `diagram-arch`)
    - 소문자·숫자·하이픈만, 64자 이내, `claude`·`anthropic` 포함 금지
    - `SKILL.md`의 `name:`과 폴더명 일치 (빌드 스크립트가 검사)
@@ -14,7 +16,7 @@
 4. `profile.md` 작성 (선택) — 같은 표준을 여러 용도로 나눌 때만, **공통 표준에서 바꾸는 값만** 표로. 용도가 하나면 파일 삭제하고 SKILL.md 파일 표에서도 제거
 5. `bundle.txt`에 필요한 파일 경로 기재 — `shared/<계열>/x` → 스킬의 `references/x`, `scripts/x` → 스킬의 `scripts/x`, glob 허용(`shared/web/themes/*.md`)
 6. `scripts/build.sh {스킬명}` → `dist/{스킬명}.zip` 생성, 업로드 후 테스트
-7. 루트 `README.md` 치트시트·로드맵 표에 한 줄 추가
+7. 루트 `README.md` 빠른 사용표·로드맵 표에 한 줄 추가
 
 ## 공통 표준 수정
 
