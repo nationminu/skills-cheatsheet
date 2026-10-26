@@ -1,0 +1,2 @@
+shared/ppt/PPT-MASTER_생성표준.md
+shared/ppt/구성문서_양식.md

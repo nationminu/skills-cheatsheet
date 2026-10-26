@@ -8,3 +8,6 @@ Thumbs.db
 *.xlsx
 *.pdf
 !**/assets/**
+
+# 빌드 산출물
+dist/
