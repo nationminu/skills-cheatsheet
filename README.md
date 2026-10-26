@@ -54,7 +54,7 @@ skills-cheatsheet/
 ├── CONTRIBUTING.md              # 새 오버레이 스킬 만드는 법, 업로드 규칙
 ├── shared/                      # 여러 스킬이 공유하는 표준·양식 (원본은 여기 한 곳)
 │   ├── ppt/
-│       ├── PPT-MASTER_생성표준.md
+│   │   ├── PPT-MASTER_생성표준.md
 │   │   └── 구성문서_양식.md
 │   └── web/
 │       └── WEB-DESIGN.md        # 업무 시스템 디자인 시스템 (토큰 + 규칙)
