@@ -1,9 +1,9 @@
 ---
 name: ppt-proposal
-description: 오픈마루 표준 고객 제안서 PPT 생성. "제안서 PPT", "제안 덱", "ppt-proposal"로 요청하거나 고객 의사결정자에게 발표·배포할 기술 제안 PPTX를 요청할 때 사용. ppt-master 위에 오픈마루 생성 표준과 제안서 프로필을 덮어씌워 편집 가능한 네이티브 PPTX를 만든다.
+description: 팀 표준 고객 제안서 PPT 생성. "제안서 PPT", "제안 덱", "ppt-proposal"로 요청하거나 고객 의사결정자에게 발표·배포할 기술 제안 PPTX를 요청할 때 사용. ppt-master 위에 팀 생성 표준과 제안서 프로필을 덮어씌워 편집 가능한 네이티브 PPTX를 만든다.
 ---
 
-# ppt-proposal — 오픈마루 표준 제안서
+# ppt-proposal — 팀 표준 제안서
 
 ppt-master 스킬을 **생성 엔진**으로 쓰고, 이 스킬의 표준·프로필을 **규칙**으로 적용하는 오버레이 스킬.
 
