@@ -6,7 +6,7 @@
   python3 scripts/check-phrases.py 결과.pptx --all    # 본문 불릿까지 전부 (기본은 제목·부제·블록 제목 추정 위치)
   python3 scripts/check-phrases.py --text "변수 아홉 개의 구성"   # 문구 하나 확인
 
-- 찾는 형태: {숫자|한글 수사} + 가지·개·건·장면·단계·절·줄·묶음·항목·종
+- 찾는 형태: {숫자|한글 수사} + 가지·개·건·장면·단계·절·줄·묶음·항목·종·축, {수}대 {원칙·과제…}, Top N·N-Step 등
 - 예외(사실 숫자: 날짜, 시각, 사양, 기간, 금액, KPI 값)는 사람이 결과를 보고 판단 — 이 스크립트는 후보만 보여 줌
 - python-pptx 필요: pip install python-pptx
 """
@@ -14,8 +14,13 @@ import re
 import sys
 
 NUM = r"(?:\d+|한|두|세|네|다섯|여섯|일곱|여덟|아홉|열(?:\s?(?:한|두|세|네|다섯|여섯|일곱|여덟|아홉))?|스물|스무)"
-UNIT = r"(?:가지|개|건|장면|단계|절|줄|묶음|항목|종)"
+UNIT = r"(?:가지|개|건|장면|단계|절|줄|묶음|항목|종|축)"
 PATTERN = re.compile(rf"(?<![가-힣0-9]){NUM}\s?{UNIT}(?=$|[^가-힣]|의|와|과|을|를|은|는|이|가|로|으로|및|에|씩|만|도)")
+
+# {수}대 {명사}: 3대 원칙, 5대 과제 (서버 2대 같은 수량은 제외 — 뒤에 덱 구성 명사가 올 때만)
+DAE = re.compile(rf"(?<![가-힣0-9]){NUM}\s?대\s?(?:(?:추진|중점|핵심|주요|전략|혁신)\s?)?(?:원칙|과제|전략|축|핵심|요소|목표|방향|분야|서비스|가치|혁신|기능|역량|이슈|리스크|성과|효과|포인트|키워드)")
+# 영문 개수 표현: Top 5, 3-Step, 4 Pillars
+EN = re.compile(r"\b(?:top\s?\d+|\d+\s?-?\s?(?:steps?|pillars?|points?|keys?|ways?|things?))\b", re.I)
 
 # 오탐을 줄이기 위한 예외 (단어 일부로 쓰인 경우)
 IGNORE = re.compile(r"(한\s?줄\s?요약|한\s?개념|세\s?가지\s?이상)")
@@ -27,6 +32,8 @@ def find(text):
         if IGNORE.search(text[max(0, m.start() - 2): m.end() + 4]):
             continue
         hits.append(m.group(0))
+    hits += [m.group(0) for m in DAE.finditer(text)]
+    hits += [m.group(0) for m in EN.finditer(text)]
     return hits
 
 

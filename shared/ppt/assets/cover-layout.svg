@@ -8,7 +8,7 @@
   <text x="140" y="104" fill="#BBC5D6" font-size="13" text-anchor="middle">제안사 로고</text>
   <text x="140" y="124" fill="#BBC5D6" font-size="11" text-anchor="middle">(흰색 반전, 원본 비율)</text>
 
-  <!-- 핵심 축 3개: 첫 구분선 y 4.2, 간격 1.0 -->
+  <!-- 핵심 축 (2~3줄): 첫 구분선 y 4.2, 간격 1.0 -->
   <g fill="#FFFFFF">
     <rect x="60" y="420" width="35" height="2" fill="#1F6FEB"/>
     <text x="60" y="455" font-size="19.4" font-weight="700">{축 1 제목}</text>
