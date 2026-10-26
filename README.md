@@ -15,6 +15,7 @@
 - PPT 공통: 결과와 함께 **스토리라인 표**, `[자료 필요]`·`[확인 필요]` 목록, 점검 결과 요약 제출
 - 구성 문서가 없으면 스킬이 필수 항목 몇 가지만 묻고 초안부터 작성
 - 요청 문구 더 보기: [guides/ppt-master-prompts.md](guides/ppt-master-prompts.md) (스킬명만 바꿔서 사용)
+- **설치 없이 쓰기**: 기본 스킬(`ppt-master` 등)만 있으면 md 파일 첨부로 같은 결과 → [guides/no-install.md](guides/no-install.md)
 
 ## 여러 스킬 함께 쓰기
 
@@ -67,6 +68,7 @@ skills-cheatsheet/
 │   ├── ppt-briefing/
 │   └── web-admin/            # profile 없음 (디자인 시스템이 곧 표준)
 ├── guides/                      # 엔진 스킬 사용 가이드 (사람이 읽는 문서)
+│   ├── no-install.md            # 설치 없이 파일 첨부로 쓰는 방법
 │   ├── ppt-master.md
 │   └── ppt-master-prompts.md
 ├── _template/overlay-skill/     # 새 오버레이 스킬 양식
@@ -74,6 +76,8 @@ skills-cheatsheet/
 ```
 
 ## 설치 (claude.ai)
+
+> 업로드 없이 쓰려면 [설치 없이 사용하기](guides/no-install.md)
 
 1. 엔진 스킬 활성화 확인 — PPT 계열: `ppt-master` / 웹 계열: `frontend-design`, `web-design-guidelines`(선택)
 2. 빌드: `scripts/build.sh` → `dist/*.zip` 생성
