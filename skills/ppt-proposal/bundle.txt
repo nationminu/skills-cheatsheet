@@ -2,3 +2,6 @@ shared/ppt/PPT-MASTER.md
 shared/ppt/PPT-OUTLINE-TEMPLATE.md
 shared/ppt/assets/*
 scripts/check-phrases.py
+shared/diagram/ARCH-DIAGRAM.md
+shared/diagram/arch-diagram-template.yaml
+scripts/arch-diagram.py

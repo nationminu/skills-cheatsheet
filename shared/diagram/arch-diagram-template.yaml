@@ -1,0 +1,61 @@
+# 논리 구성도 내용 양식 — 디자인은 ARCH-DIAGRAM.md 표준, 생성은 scripts/arch-diagram.py
+# 아래는 예시(가상 웹 서비스). 키 구성을 그대로 두고 값만 업무 내용으로 바꿈 — 좌표·크기·색은 쓰지 않음
+prefix: arch                         # 장표 안 id 접두어 (한 장표에 구성도 2개면 다르게)
+
+services:                            # 칩 이름 → 아이콘·분류 (tint: application 업무 파랑 / ops 운영 초록 / 생략 흰 칩)
+  업무 애플리케이션: {icon: apps, category: application, tint: application}
+  모니터링 에이전트: {icon: activity, category: ops, tint: ops}
+  세션 저장소: {icon: database, category: data}
+  배치 작업: {icon: clock, category: application}
+  관리 콘솔: {icon: layout-dashboard, category: ops}
+
+left:                                # 왼쪽 계층 — 행위자 + 입구·관리 서버
+  label: 사용자
+  actors:                            # row: 주 영역 행 번호(소수 가능, 0.5 = 두 행 사이)
+    - {id: user, label: 사용자, icon: users, row: 0}
+    - {id: admin, label: 관리자, icon: user-cog, row: 1}
+  nodes:                             # rows: [a, b] = 두 행 사이 가운데
+    - {id: lb, label: L4 로드밸런서, category: network, caption: 공통 진입, sub: 이중화, rows: [0, 1], customer: true, required: true}
+    - {id: mgmt, label: 관리 서버, category: compute, icon: server-2, caption: 배포·관리, caption_category: cicd, sub: 8 Core · 16 GB, row: 2, chips: [Git, CI, Registry, 백업]}
+
+main:                                # 주 영역 — 유일한 점선 박스
+  label: 서비스 플랫폼
+  caption: 가상 머신 기반
+  rows: 3
+  columns:                           # 역할별 열, width = 상대 폭
+    - {id: web, width: 1}
+    - {id: was, width: 3}
+    - {id: db, width: 1}
+  networks:                          # kind: service / internal / mgmt / dmz
+    - {id: dmz, kind: dmz, label: DMZ, cols: [web]}
+    - {id: internal, kind: internal, label: 내부 네트워크 · 10G, cols: [was, db]}
+  nodes:
+    - {id: web-1, col: web, row: 0, label: WEB 1, category: network, icon: world-www, spec: 8 Core · 16 GB, sub: 정적 컨텐츠}
+    - {id: web-2, col: web, row: 1, label: WEB 2, category: network, icon: world-www, spec: 8 Core · 16 GB, sub: 정적 컨텐츠}
+    - {id: was-1, col: was, row: 0, label: WAS 1, category: application, icon: apps, spec: 16 Core · 64 GB, sub: 업무 실행,
+       common: [업무 애플리케이션, 모니터링 에이전트], services: [세션 저장소, 관리 콘솔]}
+    - {id: was-2, col: was, row: 1, label: WAS 2, category: application, icon: apps, spec: 16 Core · 64 GB, sub: 업무 실행,
+       common: [업무 애플리케이션, 모니터링 에이전트], services: [세션 저장소, 배치 작업]}
+    - {id: was-n, col: was, row: 2, label: WAS N, category: application, icon: apps, caption: 업무 · 확장, spec: 16 Core · 64 GB, sub: 필요 시 추가, dashed: true,
+       common: [업무 애플리케이션, 모니터링 에이전트], note: 업무량에 따라 서버 추가}
+    - {id: db-1, col: db, row: 0, label: DB Active, category: data, spec: 32 Core · 128 GB, sub: 이중화}
+    - {id: db-2, col: db, row: 1, label: DB Standby, category: data, spec: 32 Core · 128 GB, sub: 복제}
+    # 빈 칸(db 열 2행)은 연결선 통로로 쓰임 — 합류선이 지나갈 행 사이·빈 칸을 남겨 둠
+
+right:                               # 오른쪽 계층 (선택) — 고객 인프라·외부 연계
+  label: 고객 인프라 · 고객 준비
+  nodes:
+    - {id: nas, label: 공유 스토리지, category: storage, sub: 파일 공유, row: 0, customer: true, required: true}
+    - {id: dns, label: DNS, category: infra, icon: world-www, sub: 이름 해석, row: 1, customer: true, required: true}
+    - {id: ntp, label: NTP, category: infra, icon: clock, sub: 시간 동기, row: 2, customer: true}
+
+edges:                               # type: service / control / data / deploy / monitor, 목록 = 분기·합류
+  - {from: user, to: lb, type: service}
+  - {from: admin, to: lb, type: control}
+  - {from: lb, to: [web-1, web-2], type: service}
+  - {from: web-1, to: was-1, type: service}
+  - {from: web-2, to: was-2, type: service}
+  - {from: was-1, to: db-1, type: data}
+  - {from: was-2, to: db-2, type: data}
+  - {from: [was-1, was-2], to: nas, type: data}
+  - {from: mgmt, to: was-n, type: deploy, label: 배포}

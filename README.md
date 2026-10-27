@@ -49,6 +49,7 @@
               (+ 용도별 profile.md)
 [테마]        -                                           shared/web/themes/*.md  ← 색상만, 교체 가능
 [공통 표준]   shared/ppt/PPT-MASTER.md                    shared/web/DASHBOARD-DESIGN.md
+              shared/diagram/ARCH-DIAGRAM.md (구성도)
 [엔진]        ppt-master                                  frontend-design(구현) + web-design-guidelines(점검)
 
 위 계층이 아래 계층을 덮어씀 (같은 항목이면 위가 우선)
@@ -76,6 +77,9 @@ skills-cheatsheet/
 │   ├── ppt/
 │   │   ├── PPT-MASTER.md
 │   │   └── PPT-OUTLINE-TEMPLATE.md
+│   ├── diagram/
+│   │   ├── ARCH-DIAGRAM.md      # 논리 구성도 디자인 표준 (디자인 고정, 내용은 YAML)
+│   │   └── arch-diagram-template.yaml  # 구성도 내용 양식 (scripts/arch-diagram.py 로 생성)
 │   └── web/
 │       ├── DASHBOARD-DESIGN.md  # 대시보드(관리자·업무 시스템) 구조: 레이아웃·컴포넌트·패턴·문구
 │       ├── THEME-CONTRACT.md    # 테마 규칙: 필수 토큰, 대비 기준, 라이트/다크 구현

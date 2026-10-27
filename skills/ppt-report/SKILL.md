@@ -16,6 +16,9 @@ ppt-master 스킬을 **생성 엔진**으로 쓰고, 이 스킬의 표준·프�
 | `references/PPT-OUTLINE-TEMPLATE.md` | 업무별 구성 문서 양식 |
 | `references/assets/cover-layout.svg` | 표지 고정 레이아웃 와이어프레임 (표준 6.9 치수) |
 | `scripts/check-phrases.py` | 결과 PPTX에서 개수 세기 표현 후보 찾기 (표준 4.4) |
+| `references/ARCH-DIAGRAM.md` | 논리 구성도 디자인 표준 (표준 6.7) |
+| `references/arch-diagram-template.yaml` | 구성도 내용 양식 — 값만 업무 내용으로 |
+| `scripts/arch-diagram.py` | 내용 YAML → 구성도 조각·SVG (PyYAML 필요), 칸 중복·노드 관통 점검 |
 | `references/assets/body-layout.svg` | 본문 고정 레이아웃 와이어프레임 (표준 6.5 — 트래커·제목·부제·선·내용·선·페이징) |
 
 ## 규칙 우선순위
